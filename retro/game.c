@@ -71,7 +71,7 @@ void updateGame() {
 	if(bgY<=-TILEH) bgY = 0;
 }
 
-void drawGame() {
+void renderGame() {
 	drawBackground(bgX, bgY, bgClip);
 
 	drawObject(&player, player.clip);

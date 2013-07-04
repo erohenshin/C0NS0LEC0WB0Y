@@ -17,7 +17,7 @@ int main(int argc,char *argv[]) {
 
 		getInput();
 		updateGame();
-		drawGame();
+		renderGame();
 
 		SDL_Flip(screen);
 		SDL_Delay(25);

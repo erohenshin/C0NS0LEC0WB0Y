@@ -9,6 +9,6 @@ extern Object player;
 
 void loadLevel(int lvl);
 void updateGame();
-void drawGame();
+void renderGame();
 
 #endif
