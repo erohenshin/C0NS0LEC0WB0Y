@@ -46,7 +46,7 @@ void exitLevel() {
 }
 
 void updateGame() {
-  if(msgTime>0) --msgTime;
+	if(msgTime>0) --msgTime;
   
 	player.x += player.xVel;
 	player.y += player.yVel;
@@ -67,12 +67,12 @@ void updateGame() {
 		player.x -= player.xVel << 1;
 		someObject->x -= someObject->xVel;
 		message = "hit!";
-    msgTime = 50;
+		msgTime = 50;
 	}
 	if(yCollision(&player, someObject)) {
 		player.y -= player.yVel << 1;
 		message = "hit!";
-    msgTime = 50;
+		msgTime = 50;
 	}
 	if(!yCollision(&player, someObject)) ++player.y;
 	if( yCollision(&player, someObject)) --player.y;
