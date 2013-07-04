@@ -42,7 +42,7 @@ void loadLevel(int lvl) {
 }
 
 void exitLevel() {
-  free(someObject);
+	free(someObject);
 }
 
 void updateGame() {
