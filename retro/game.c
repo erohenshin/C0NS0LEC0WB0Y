@@ -22,7 +22,7 @@ void changeState(State changeTo) {
 }
 
 void loadLevel(int lvl) {
-  someObject      = (Object*) malloc (sizeof(Object));
+	someObject      = (Object*) malloc (sizeof(Object));
 	player.x        = (SCREENW>>1)-(TILEW>>1);
 	player.y        = 0;
 	player.xVel     = 0;
@@ -33,8 +33,8 @@ void loadLevel(int lvl) {
 
 	someObject->x    = (SCREENW>>1)-(TILEW>>1);
 	someObject->y    = (SCREENH>>1)-(TILEH>>1);
-  someObject->xVel = 0;
-  someObject->yVel = 0;
+	someObject->xVel = 0;
+	someObject->yVel = 0;
 	someObject->w    = TILEW;
 	someObject->h    = TILEH;
 	someObject->clip = &sClip[0];
@@ -56,7 +56,7 @@ void updateGame() {
 	else if (player.y>SCREENH-TILEH) player.y = 0;
 	else if (player.y<0)             player.y = SCREENH-TILEH;
 	
-  //WILL BE MOVED TO OBJECT FUNCTIONS
+	//WILL BE MOVED TO OBJECT FUNCTIONS
 	if(!someObject->xVel) moveObject(someObject,someObject->direction,1);
 	if(someObject->x<0) someObject->x = SCREENW-TILEW;
 	
