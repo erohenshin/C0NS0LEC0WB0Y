@@ -1,1 +1,0 @@
-/*irc.rizon.net #xenophobia*/
