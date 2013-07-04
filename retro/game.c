@@ -13,7 +13,8 @@ static int bgX, bgY;
 Object player;
 Object* someObject;
 
-char *message = "hail satan";
+static char *message = "hail satan";
+static char msgTime = 50;
 
 void changeState(State changeTo) {
 	gmState = changeTo;
@@ -45,6 +46,8 @@ void exitLevel() {
 }
 
 void updateGame() {
+  if(msgTime>0) --msgTime;
+  
 	player.x += player.xVel;
 	player.y += player.yVel;
 
@@ -53,6 +56,7 @@ void updateGame() {
 	else if (player.y>SCREENH-TILEH) player.y = 0;
 	else if (player.y<0)             player.y = SCREENH-TILEH;
 	
+  //WILL BE MOVED TO OBJECT FUNCTIONS
 	if(!someObject->xVel) moveObject(someObject,someObject->direction,1);
 	if(someObject->x<0) someObject->x = SCREENW-TILEW;
 	
@@ -63,10 +67,12 @@ void updateGame() {
 		player.x -= player.xVel << 1;
 		someObject->x -= someObject->xVel;
 		message = "hit!";
+    msgTime = 50;
 	}
 	if(yCollision(&player, someObject)) {
 		player.y -= player.yVel << 1;
 		message = "hit!";
+    msgTime = 50;
 	}
 	if(!yCollision(&player, someObject)) ++player.y;
 	if( yCollision(&player, someObject)) --player.y;
@@ -85,5 +91,5 @@ void renderGame() {
 	drawObject(someObject, someObject->clip);
 
 	writeText(0, 0, "r37r0 v0.0");
-	writeText((SCREENW>>1)-(TILEW*strlen(message)>>1), SCREENH-TILEH, message);
+	if(msgTime>0) writeText((SCREENW>>1)-(TILEW*strlen(message)>>1), SCREENH-TILEH, message);
 }
