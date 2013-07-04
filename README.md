@@ -1,1 +1,1 @@
-adamrothra@gmail.com AIM erohenshin irc.rizon.net #xenophobia
+irc.rizon.net #xenophobia
