@@ -1,3 +1,2 @@
-
-irc.rizon.net #xenophobia
+/*irc.rizon.net #xenophobia*/
 
