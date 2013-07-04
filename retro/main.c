@@ -9,7 +9,7 @@ char running = 1;
 int main(int argc,char *argv[]) {
 	SDL_Init(SDL_INIT_VIDEO|SDL_INIT_EVENTTHREAD);
 
-	loadVideo("resource/test.png","resource/tile.png");
+	loadVideo();
 	loadLevel(gmLvl);
 	
 	while(running) {		
@@ -22,6 +22,8 @@ int main(int argc,char *argv[]) {
 		SDL_Flip(screen);
 		SDL_Delay(25);
 	}
+  
+  exitLevel();
 
 	exitVideo();
 	SDL_Quit();

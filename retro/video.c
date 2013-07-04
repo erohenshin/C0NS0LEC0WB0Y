@@ -8,15 +8,15 @@ SDL_Surface *sprite;
 SDL_Rect bgClip[SHEETW/TILEW*SHEETH/TILEH];
 SDL_Rect  sClip[SHEETW/TILEW*SHEETH/TILEH];
 
-void loadVideo(char *bgFile,char *sFile) {
+void loadVideo() {
 	SDL_WM_SetCaption("R37R0 v0.0",NULL);
 	screen = SDL_SetVideoMode(SCREENW,SCREENH,8,SDL_HWSURFACE|SDL_DOUBLEBUF);
 
-	SDL_Surface *loadImage = IMG_Load(bgFile);
+	SDL_Surface *loadImage = IMG_Load("resource/test.png");
 	background = SDL_DisplayFormatAlpha(loadImage);
 	SDL_FreeSurface(loadImage);
 	
-	loadImage = IMG_Load(sFile);
+	loadImage = IMG_Load("resource/tile.png");
 	sprite = SDL_DisplayFormatAlpha(loadImage);
 	SDL_FreeSurface(loadImage);
 	

@@ -14,7 +14,7 @@ extern SDL_Surface *sprite;
 extern SDL_Rect bgClip[SHEETW/TILEW*SHEETH/TILEH];
 extern SDL_Rect  sClip[SHEETW/TILEW*SHEETH/TILEH];
 
-void loadVideo(char *bgFile,char *sFile);
+void loadVideo();
 void exitVideo();
 void drawBackground(int xStart,int yStart,SDL_Rect *clip);
 void drawClip(int x,int y,SDL_Surface *source,SDL_Rect *clip);
