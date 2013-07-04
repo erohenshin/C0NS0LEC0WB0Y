@@ -23,7 +23,7 @@ int main(int argc,char *argv[]) {
 		SDL_Delay(25);
 	}
   
-  exitLevel();
+	exitLevel();
 
 	exitVideo();
 	SDL_Quit();
