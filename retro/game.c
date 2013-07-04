@@ -3,6 +3,8 @@
 #include "game.h"
 #include "video.h"
 
+#include <string.h>
+
 State gmState = TITLE;
 int   gmLvl   = 0;
 
@@ -10,6 +12,13 @@ static int bgX, bgY;
 
 Object player;
 Object someObject;
+
+char *message = "hail satan";
+
+void changeState(State changeTo) {
+	gmState = changeTo;
+	if(gmState == LEVEL) loadLevel(gmLvl);
+}
 
 void loadLevel(int lvl) {
 	player.x        = (SCREENW>>1)-(TILEW>>1);
@@ -26,8 +35,6 @@ void loadLevel(int lvl) {
 	someObject.h    = TILEH;
 	someObject.clip = &sClip[0];
 	someObject.direction = LEFT;
-
-	gmState = LEVEL;
 }
 
 void updateGame() {
@@ -45,18 +52,18 @@ void updateGame() {
 	someObject.x += someObject.xVel;
 	someObject.y += someObject.yVel;
 
-	/*BASIC COLLISION*/
 	if(xCollision(&player, &someObject)) {
 		player.x -= player.xVel << 1;
 		someObject.x -= someObject.xVel;
+		message = "x collision";
 	}
 	if(yCollision(&player, &someObject)) {
 		player.y -= player.yVel << 1;
+		message = "y collision";
 	}
 	if(!yCollision(&player, &someObject)) ++player.y;
 	if( yCollision(&player, &someObject)) --player.y;
 
-	/*BASIC BG SCROLLING*/
 	bgX -= 1;
 	bgY -= 1;
 
@@ -71,4 +78,5 @@ void drawGame() {
 	drawObject(&someObject, someObject.clip);
 
 	writeText(0, 0, "r37r0 v0.0");
+	writeText((SCREENW>>1)-(TILEW*strlen(message)>>1), SCREENH-TILEH, message);
 }

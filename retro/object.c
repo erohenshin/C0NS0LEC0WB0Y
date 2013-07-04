@@ -4,7 +4,7 @@
 
 void moveObject(Object *obj,Direction direction,int vel) {
 	switch(direction) {
-		case UP:		obj->yVel -= vel; break;
+		case UP:    obj->yVel -= vel; break;
 		case DOWN:  obj->yVel += vel; break;
 		case LEFT:  obj->xVel -= vel; break;
 		case RIGHT: obj->xVel -= vel; break;
