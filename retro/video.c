@@ -12,7 +12,9 @@ void loadVideo() {
 	SDL_WM_SetCaption("R37R0 v0.0",NULL);
 	screen = SDL_SetVideoMode(SCREENW,SCREENH,8,SDL_HWSURFACE|SDL_DOUBLEBUF);
 
-	SDL_Surface *loadImage = IMG_Load("resource/test.png");
+	SDL_Surface *loadImage;
+	
+	loadImage = IMG_Load("resource/test.png");
 	background = SDL_DisplayFormatAlpha(loadImage);
 	SDL_FreeSurface(loadImage);
 	
