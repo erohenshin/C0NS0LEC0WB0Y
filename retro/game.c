@@ -22,14 +22,14 @@ void changeState(State changeTo) {
 }
 
 void loadLevel(int lvl) {
-	someObject      = (Object*) malloc (sizeof(Object));
-	player.x        = (SCREENW>>1)-(TILEW>>1);
-	player.y        = 0;
-	player.xVel     = 0;
-	player.yVel     = 0;
-	player.w        = TILEW;
-	player.h        = TILEH;
-	player.clip     = &sClip[1];
+	someObject       = (Object*) malloc (sizeof(Object));
+	player.x         = (SCREENW>>1)-(TILEW>>1);
+	player.y         = 0;
+	player.xVel      = 0;
+	player.yVel      = 0;
+	player.w         = TILEW;
+	player.h         = TILEH;
+	player.clip      = &sClip[1];
 
 	someObject->x    = (SCREENW>>1)-(TILEW>>1);
 	someObject->y    = (SCREENH>>1)-(TILEH>>1);
