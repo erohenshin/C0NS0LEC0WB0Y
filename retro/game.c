@@ -58,9 +58,14 @@ void updateGame() {
 	else if (player.y<0)             player.y = SCREENH-TILEH;
 	
 	if(someObject != NULL) {
+		someObject->xVel = 0;
+		someObject->yVel = 0;
+
 		if(!someObject->xVel) moveObject(someObject,someObject->direction,1);
-		if(someObject->x<0) someObject->x = SCREENW-TILEW;
-	
+		
+		if(someObject->x<0) someObject->direction = RIGHT;
+		else if(someObject->x>SCREENW-TILEW) someObject->direction = LEFT;
+		
 		someObject->x += someObject->xVel;
 		someObject->y += someObject->yVel;
   
