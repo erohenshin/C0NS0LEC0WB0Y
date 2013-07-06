@@ -39,12 +39,11 @@ void loadLevel(int lvl) {
 	someObject->h    = TILEH;
 	someObject->clip = &sClip[0];
 	someObject->direction = LEFT;
-	free(someObject);
-	someObject = NULL;
 }
 
 void exitLevel() {
 	free(someObject);
+	someObject = NULL;
 }
 
 void updateGame() {
