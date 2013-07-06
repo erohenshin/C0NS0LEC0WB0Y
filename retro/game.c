@@ -39,6 +39,8 @@ void loadLevel(int lvl) {
 	someObject->h    = TILEH;
 	someObject->clip = &sClip[0];
 	someObject->direction = LEFT;
+	free(someObject);
+	someObject = NULL;
 }
 
 void exitLevel() {
@@ -56,27 +58,28 @@ void updateGame() {
 	else if (player.y>SCREENH-TILEH) player.y = 0;
 	else if (player.y<0)             player.y = SCREENH-TILEH;
 	
-	//WILL BE MOVED TO OBJECT FUNCTIONS
-	if(!someObject->xVel) moveObject(someObject,someObject->direction,1);
-	if(someObject->x<0) someObject->x = SCREENW-TILEW;
+	if(someObject != NULL) {
+		if(!someObject->xVel) moveObject(someObject,someObject->direction,1);
+		if(someObject->x<0) someObject->x = SCREENW-TILEW;
 	
-	someObject->x += someObject->xVel;
-	someObject->y += someObject->yVel;
+		someObject->x += someObject->xVel;
+		someObject->y += someObject->yVel;
   
-	if(xCollision(&player, someObject)) {
-		player.x -= player.xVel << 1;
-		someObject->x -= someObject->xVel;
-		message = "hit!";
-		msgTime = 50;
+		if(xCollision(&player, someObject)) {
+			player.x -= player.xVel << 1;
+			someObject->x -= someObject->xVel;
+			message = "hit!";
+			msgTime = 50;
+		}
+		if(yCollision(&player, someObject)) {
+			player.y -= player.yVel << 1;
+			message = "hit!";
+			msgTime = 50;
+		}
+		if(!yCollision(&player, someObject)) ++player.y;
+		if( yCollision(&player, someObject)) --player.y;
 	}
-	if(yCollision(&player, someObject)) {
-		player.y -= player.yVel << 1;
-		message = "hit!";
-		msgTime = 50;
-	}
-	if(!yCollision(&player, someObject)) ++player.y;
-	if( yCollision(&player, someObject)) --player.y;
-  
+	
 	bgX -= 1;
 	bgY -= 1;
 
@@ -88,8 +91,10 @@ void renderGame() {
 	drawBackground(bgX, bgY, bgClip);
 
 	drawObject(&player, player.clip);
-	drawObject(someObject, someObject->clip);
-
+	
+	if(someObject != NULL) {
+		drawObject(someObject, someObject->clip);
+	}
 	writeText(0, 0, "r37r0 v0.0");
 	if(msgTime>0) writeText((SCREENW>>1)-(TILEW*strlen(message)>>1), SCREENH-TILEH, message);
 }
