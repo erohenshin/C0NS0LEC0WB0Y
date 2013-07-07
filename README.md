@@ -1,4 +1,2 @@
-<pre> 
-/* AIM erohenshin            *
- * irc.rizon.net #xenophobia */
-</pre>
+<pre>/* AIM erohenshin            *
+ * irc.rizon.net #xenophobia */</pre>
