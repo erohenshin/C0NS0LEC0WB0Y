@@ -11,7 +11,7 @@ int   gmLvl   = 0;
 static int bgX, bgY;
 
 Object player;
-Object* someObject;
+Object *someObject;
 
 static char *message = "hail satan";
 static char msgTime = 50;
@@ -23,6 +23,7 @@ void changeState(State changeTo) {
 
 void loadLevel(int lvl) {
 	someObject       = (Object*) malloc (sizeof(Object));
+	
 	player.x         = (SCREENW>>1)-(TILEW>>1);
 	player.y         = 0;
 	player.xVel      = 0;
