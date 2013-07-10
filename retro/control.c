@@ -13,18 +13,18 @@ void getInput() {
 		}
 		if(event.type==SDL_KEYDOWN) {
 			switch(event.key.keysym.sym) {
-				case SDLK_UP:    player.yVel -= 2; break;
-				case SDLK_DOWN:  player.yVel += 2; break;
-				case SDLK_LEFT:  player.xVel -= 2; break;
-				case SDLK_RIGHT: player.xVel += 2; break;
+				case SDLK_UP:    player.yVel -= player.vel; break;
+				case SDLK_DOWN:  player.yVel += player.vel; break;
+				case SDLK_LEFT:  player.xVel -= player.vel; break;
+				case SDLK_RIGHT: player.xVel += player.vel; break;
 			}
 		}
 		if(event.type==SDL_KEYUP) {
 			switch(event.key.keysym.sym) {
-				case SDLK_UP:    player.yVel += 2; break;
-				case SDLK_DOWN:	 player.yVel -= 2; break;
-				case SDLK_LEFT:  player.xVel += 2; break;
-				case SDLK_RIGHT: player.xVel -= 2; break;
+				case SDLK_UP:    player.yVel += player.vel; break;
+				case SDLK_DOWN:	 player.yVel -= player.vel; break;
+				case SDLK_LEFT:  player.xVel += player.vel; break;
+				case SDLK_RIGHT: player.xVel -= player.vel; break;
 			}
 		}
 	}

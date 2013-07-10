@@ -2,12 +2,12 @@
 #include "object.h"
 #include "video.h"
 
-void moveObject(Object *obj,Direction direction,int vel) {
+void moveObject(Object *obj,Direction direction) {
 	switch(direction) {
-		case UP:    obj->yVel -= vel; break;
-		case DOWN:  obj->yVel += vel; break;
-		case LEFT:  obj->xVel -= vel; break;
-		case RIGHT: obj->xVel += vel; break;
+		case UP:    obj->yVel -= obj->vel; break;
+		case DOWN:  obj->yVel += obj->vel; break;
+		case LEFT:  obj->xVel -= obj->vel; break;
+		case RIGHT: obj->xVel += obj->vel; break;
 	}
 }
 

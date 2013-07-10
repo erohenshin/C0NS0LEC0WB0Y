@@ -1,8 +1,8 @@
 #ifndef _VIDEO_H_
 #define _VIDEO_H_
 
-#define SCREENW 256
-#define SCREENH 240
+#define SCREENW 640 /*256*/
+#define SCREENH 480 /*240*/
 #define SHEETW  128
 #define SHEETH  128
 #define TILEW		8

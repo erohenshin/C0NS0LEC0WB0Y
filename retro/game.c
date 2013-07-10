@@ -22,10 +22,11 @@ void changeState(State changeTo) {
 }
 
 void loadLevel(int lvl) {
-	someObject       = (Object*) malloc (sizeof(Object));
+	someObject       = (Object*) malloc(sizeof(Object));
 	
 	player.x         = (SCREENW>>1)-(TILEW>>1);
 	player.y         = 0;
+	player.vel       = 2;
 	player.xVel      = 0;
 	player.yVel      = 0;
 	player.w         = TILEW;
@@ -34,6 +35,7 @@ void loadLevel(int lvl) {
 
 	someObject->x    = (SCREENW>>1)-(TILEW>>1);
 	someObject->y    = (SCREENH>>1)-(TILEH>>1);
+	someObject->vel  = 1;
 	someObject->xVel = 0;
 	someObject->yVel = 0;
 	someObject->w    = TILEW;
@@ -62,7 +64,7 @@ void updateGame() {
 		someObject->xVel = 0;
 		someObject->yVel = 0;
 
-		if(!someObject->xVel) moveObject(someObject,someObject->direction,1);
+		if(!someObject->xVel) moveObject(someObject,someObject->direction);
 		
 		if(someObject->x<0) someObject->direction = RIGHT;
 		else if(someObject->x>SCREENW-TILEW) someObject->direction = LEFT;
