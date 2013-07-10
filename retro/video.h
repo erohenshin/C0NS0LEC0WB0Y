@@ -5,8 +5,8 @@
 #define SCREENH 480 /*240*/
 #define SHEETW  128
 #define SHEETH  128
-#define TILEW		8
-#define TILEH		8
+#define TILEW   8
+#define TILEH   8
 
 extern SDL_Surface *screen;
 extern SDL_Surface *background;
