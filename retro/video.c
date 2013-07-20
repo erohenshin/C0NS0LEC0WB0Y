@@ -5,12 +5,12 @@ SDL_Surface *screen;
 
 SDL_Surface *background;
 SDL_Surface *sprite;
-SDL_Rect bgClip[SHEETW/TILEW*SHEETH/TILEH];
-SDL_Rect  sClip[SHEETW/TILEW*SHEETH/TILEH];
+SDL_Rect bgClip[CLIPS];
+SDL_Rect  sClip[CLIPS];
 
 void loadVideo() {
-	SDL_WM_SetCaption("R37R0 v0.0",NULL);
 	screen = SDL_SetVideoMode(SCREENW,SCREENH,8,SDL_HWSURFACE|SDL_DOUBLEBUF);
+  SDL_WM_SetCaption("R37R0 v0.0",NULL);
 
 	SDL_Surface *loadImage;
 	
@@ -24,7 +24,7 @@ void loadVideo() {
 	
 	int i, x=0, y=0;
 	
-	for(i=0;i<256;i++) {
+	for(i=0;i<CLIPS;i++) {
 		bgClip[i].x = x;
 		bgClip[i].y = y;
 		bgClip[i].w = TILEW;

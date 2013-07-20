@@ -3,16 +3,19 @@
 
 #define SCREENW 640 /*256*/
 #define SCREENH 480 /*240*/
+
 #define SHEETW  128
 #define SHEETH  128
 #define TILEW   8
 #define TILEH   8
+#define CLIPS   SHEETW/TILEW*SHEETH/TILEH
 
 extern SDL_Surface *screen;
 extern SDL_Surface *background;
+extern SDL_Surface *background;
 extern SDL_Surface *sprite;
-extern SDL_Rect bgClip[SHEETW/TILEW*SHEETH/TILEH];
-extern SDL_Rect  sClip[SHEETW/TILEW*SHEETH/TILEH];
+extern SDL_Rect bgClip[CLIPS];
+extern SDL_Rect  sClip[CLIPS];
 
 void loadVideo();
 void exitVideo();
