@@ -14,15 +14,15 @@ int main() {
 	noecho();
 	
 	while(running) {
-        keyPress=getch();
-        switch(keyPress) {
-            case UP:    printw("UP!");    break;
-            case DOWN:  printw("DOWN!");  break;
-            case LEFT:  printw("LEFT!");  break;
-            case RIGHT: printw("RIGHT!"); break;
-            case 'q':   running = 0;      break;
-        }
-				refresh();
+            keyPress=getch();
+            switch(keyPress) {
+                case UP:    printw("UP!");    break;
+                case DOWN:  printw("DOWN!");  break;
+                case LEFT:  printw("LEFT!");  break;
+                case RIGHT: printw("RIGHT!"); break;
+                case 'q':   running = 0;      break;
+            }
+	    refresh();
 	}
 	endwin();
 	return 0;

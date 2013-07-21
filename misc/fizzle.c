@@ -7,5 +7,5 @@ int main() {
 		else if (!(i%0x03)) printf("FIZZ\n");
 		else if (!(i%0x05)) printf("BUZZ\n");
 		else                printf("%i\n",i);
-	} return 0;
+	} 	return 0;
 }
