@@ -35,11 +35,7 @@ void drawSomething() {
 }
 
 void handleEvent() {
-  while(SDL_PollEvent(&event)) {
-    if(event.type==SDL_QUIT) { 
-      quit=1;
-    }
-  }
+  while (SDL_PollEvent(&event)) if (event.type==SDL_QUIT) running=0;
 }
 
 int main(int argc, char* args[]) {
