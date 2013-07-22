@@ -21,7 +21,7 @@ void init() {
 	r = rand()%127+0;
 	g = rand()%127+0;
 	b = rand()%127+0;
-  int i;
+	int i;
 	for(i=0;i<SNOWAMT;i++) {
 		snow[i].x = rand()%SCREENW+0;
 		snow[i].y = rand()%SCREENH+0;
