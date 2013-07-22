@@ -3,8 +3,6 @@
 #include "game.h"
 #include "video.h"
 
-#include <string.h>
-
 State gmState = TITLE;
 int   gmLvl   = 0;
 
@@ -103,5 +101,5 @@ void renderGame() {
 		drawObject(someObject, someObject->clip);
 	}
 	writeText(0, 0, "r37r0 v0.0");
-	if(msgTime>0) writeText((SCREENW>>1)-(TILEW*strlen(message)>>1), SCREENH-TILEH, message);
+	if(msgTime>0) writeText((SCREENW>>1)-(TILEW*SDL_strlen(message)>>1), SCREENH-TILEH, message);
 }
