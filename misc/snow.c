@@ -37,8 +37,8 @@ int main(int argc,char *argv[]) {
 	int i;
 	SDL_Init(SDL_INIT_VIDEO|SDL_INIT_EVENTTHREAD);
 	screen = SDL_SetVideoMode(SCREENW,SCREENH,32,SDL_HWSURFACE|SDL_DOUBLEBUF);
-  SDL_WM_SetCaption("H4!1+5474N",NULL);
-  srand (time(NULL));
+	SDL_WM_SetCaption("H4!1+5474N",NULL);
+	srand (time(NULL));
 	init();
 
 	while(running) {
@@ -59,7 +59,7 @@ int main(int argc,char *argv[]) {
 				snow[i].y = rand()%SCREENH+0;
 				snow[i].r = rand()%255+128;
 				snow[i].g = rand()%255+128;
-		    snow[i].b = rand()%255+128;
+				snow[i].b = rand()%255+128;
 				snow[i].v = rand()%3+1; 
 			}
 			else if(snow[i].y>SCREENH) {    
