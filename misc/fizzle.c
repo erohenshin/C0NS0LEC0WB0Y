@@ -9,4 +9,5 @@ int main() {
       case (!(i%0x05)) puts("BUZZ");
       else             printf("%i\n",i);
     } return 0;
+  }
 }
