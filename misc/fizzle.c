@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 
 int main() {
-  unsigned char i;
+  char i;
   for(i=0x01;i<=0x64;i++) {
     if      (!(i%0x0F)) puts("FIZZBUZZ");
     else if (!(i%0x03)) puts("FIZZ");
