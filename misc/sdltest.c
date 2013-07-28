@@ -14,7 +14,7 @@ int main(int argc,char *argv[]) {
 		if(SDL_PollEvent(&event)) if(event.type==SDL_QUIT) running = 0;
 		SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, 170,0,170));
 		
-		/*DO SOME SHIT*/
+		/*M4K3 S0M3 N0IZ3*/
 
 		SDL_Flip(screen);
 		SDL_Delay(25);
