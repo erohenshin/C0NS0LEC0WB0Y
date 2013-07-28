@@ -14,8 +14,8 @@ typedef struct {
 
 SDL_Surface *screen;
 SDL_Event    event;
-char  r,g,b;
-Pixel snow[SNOWAMT];
+char         r,g,b;
+Pixel        snow[SNOWAMT];
 
 void init() {
 	r = rand()%127+0;
@@ -44,7 +44,10 @@ int main(int argc,char *argv[]) {
 	while(running) {
 		if(SDL_PollEvent(&event)) {
 			if(event.type==SDL_QUIT) running = 0;
-			if(event.type==SDL_KEYDOWN) if(event.key.keysym.sym==SDLK_z) init();
+			if(event.type==SDL_KEYDOWN) {
+				if(event.key.keysym.sym==SDLK_z) init();
+				if(event.key.keysym.sym==SDLK_q) running = 0;
+			}
 		}
 		                      
 		SDL_FillRect(screen, NULL, SDL_MapRGB(screen->format, r,g,b));
