@@ -1,1 +1,1 @@
-Various codes with useless datums that I've written.
+Various codes that I've written.
