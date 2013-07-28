@@ -15,6 +15,7 @@ int main() {
 	
 	while(running) {
             keyPress=getch();
+						clear();
             switch(keyPress) {
                 case UP:    printw("UP!");    break;
                 case DOWN:  printw("DOWN!");  break;
@@ -22,7 +23,7 @@ int main() {
                 case RIGHT: printw("RIGHT!"); break;
                 case 'q':   running = 0;      break;
             }
-	    refresh();
+            refresh();
 	}
 	endwin();
 	return 0;
