@@ -10,7 +10,7 @@ SDL_Rect  sClip[CLIPS];
 
 void loadVideo() {
 	screen = SDL_SetVideoMode(SCREENW,SCREENH,8,SDL_HWSURFACE|SDL_DOUBLEBUF);
-  	SDL_WM_SetCaption("R37R0 v0.0",NULL);
+	SDL_WM_SetCaption("R37R0 v0.0",NULL);
 
 	SDL_Surface *loadImage;
 	
